@@ -372,7 +372,7 @@ else
 		install_gw
 		;;
 		4)
-		install_node 1
+		install_node
 		;;
 		5)
 		install_node_db
