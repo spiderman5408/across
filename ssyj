@@ -162,6 +162,9 @@ function install_bt(){
 function install_sspanel(){
      wget -N --no-check-certificate https://raw.githubusercontent.com/spiderman5408/sspanel-v3-mod-uim-bt/master/sspanel-v3-mod-uim-bt.sh &&chmod +x sspanel-v3-mod-uim-bt.sh &&bash sspanel-v3-mod-uim-bt.sh
 }
+function install_gw(){
+     wget -N --no-check-certificate https://raw.githubusercontent.com/spiderman5408/sspanel-theme-homepage/master/install.sh && chmod +x install.sh && bash install.sh
+}
 install_node(){
 	clear
 	echo
@@ -332,9 +335,10 @@ echo "# blog: https://www.7colorblog.com                                     "
 echo "# 请输入1或2选择对接方式                                               "
 echo "# 1  一键宝塔5.9搭建                                                "
 echo "# 2  一键sspanel前端搭建                                               "
-echo "# 3  一键后端webapi方式对接                                                 "
-echo "# 4  一键db数据库方式对接                                                 "
-echo "# 5  一键BBR加速+暴力魔改内核!                                                 "
+echo "# 3  一键优化官网主页                                               "
+echo "# 4  一键后端webapi方式对接                                                 "
+echo "# 5  一键db数据库方式对接                                                 "
+echo "# 6  一键BBR加速+暴力魔改内核!                                                 "
 echo "########################################################################"
 echo
 num=$1
@@ -345,15 +349,18 @@ then
 install_sspanel
 elif [[ $num == "3" ]]
 then
-install_node 1
+install_gw
 elif [[ $num == "4" ]]
 then
-install_node_db
+install_node 1
 elif [[ $num == "5" ]]
+then
+install_node_db
+elif [[ $num == "6" ]]
 then
 install_BBR
 else
-    stty erase '^H' && read -p " 请输入数字 [1-5]:" num
+    stty erase '^H' && read -p " 请输入数字 [1-6]:" num
 		case "$num" in
 		1)
 		install_bt
@@ -362,16 +369,19 @@ else
 		install_sspanel
 		;;
 		3)
-		install_node 1
+		install_gw
 		;;
 		4)
-		install_node_db
+		install_node 1
 		;;
 		5)
+		install_node_db
+		;;
+		6)
 		install_BBR
 		;;
 		*)
-		echo "请输入正确数字 [1-5]"
+		echo "请输入正确数字 [1-6]"
 		;;
 	esac
 fi
