@@ -160,7 +160,7 @@ function install_bt(){
      yum install -y wget && wget -O install.sh http://download.bt.cn/install/install.sh && sh install.sh
 }
 function install_sspanel(){
-     wget -N --no-check-certificate https://raw.githubusercontent.com/spiderman5408/sspanel-v3-mod-uim-bt/master/sspanel-v3-mod-uim-bt.sh &&chmod +x sspanel-v3-mod-uim-bt.sh &&bash sspanel-v3-mod-uim-bt.sh
+     wget -N --no-check-certificate https://raw.githubusercontent.com/spiderman5408/across/master/ssqd.sh &&chmod +x ssqd.sh &&bash ssqd.sh
 }
 function install_gw(){
      wget -N --no-check-certificate https://raw.githubusercontent.com/spiderman5408/sspanel-theme-homepage/master/install.sh && chmod +x install.sh && bash install.sh
