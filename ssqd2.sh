@@ -66,12 +66,12 @@ echo -e "${Info} 检测安装git、unzip、crontab工具已完成"
 sleep 1
 ##下载解压拷贝源码
 echo -e "${Info} 正在下载解压处理程序源码"
-wget -N --no-check-certificate "https://github.com/spiderman3429/ss-panel-v3-mod_Uim/archive/dev.zip"
-unzip dev.zip
+wget -N --no-check-certificate "https://github.com/Anankke/SSPanel-Uim/archive/master.zip"
+unzip master.zip
 cd ss-panel-v3-mod_Uim-dev
 mv * .[^.]* /www/wwwroot/$website/
 cd ..
-rm -rf dev.zip ss-panel-v3-mod_Uim-dev/
+rm -rf master.zip ss-panel-v3-mod_Uim-dev/
 echo -e "${Info} 下载解压处理程序源码已完成"
 sleep 1
 ##处理php函数
@@ -108,7 +108,7 @@ sleep 1
 ##初始化站点信息
 echo -e "${Info} 正在配置站点基本信息"
 cd /www/wwwroot/$website
-cp config/.config.php.for7color config/.config.php
+cp config/.config.example.php config/.config.php
 sed -i "s/websiteurl/$website/g" /www/wwwroot/$website/config/.config.php
 sed -i "s/sspanel-mukey/$sspanelmukey/g" /www/wwwroot/$website/config/.config.php
 sed -i "s/sspanel-db-databasename/$mysqldatabase/g" /www/wwwroot/$website/config/.config.php
