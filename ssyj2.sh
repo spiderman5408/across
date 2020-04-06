@@ -11,9 +11,9 @@ Libtest(){
 	echo "$LIB_PING $LIB" >> ping.pl
 	libAddr=`sort -V ping.pl|sed -n '1p'|awk '{print $2}'`
 	if [ "$libAddr" == "$GIT" ];then
-		libAddr='https://raw.githubusercontent.com/spiderman5408/ss-panel-v3-mod-node-connect/master/libsodium-1.0.13.tar.gz'
+		libAddr='https://spider-1300246764.cos.ap-beijing.myqcloud.com/001/libsodium-1.0.13.tar.gz'
 	else
-		libAddr='https://download.libsodium.org/libsodium/releases/libsodium-1.0.13.tar.gz'
+		libAddr='https://spider-1300246764.cos.ap-beijing.myqcloud.com/001/libsodium-1.0.13.tar.gz'
 	fi
 	rm -f ping.pl		
 }
@@ -160,7 +160,7 @@ function install_bt(){
      yum install -y wget && wget -O install.sh http://download.bt.cn/install/install.sh && sh install.sh
 }
 function install_sspanel(){
-     wget -N --no-check-certificate https://raw.githubusercontent.com/spiderman5408/across/master/ssqd2.sh &&chmod +x ssqd2.sh &&bash ssqd2.sh
+     wget -N --no-check-certificate https://raw.githubusercontent.com/spiderman5408/across/master/ssqd.sh &&chmod +x ssqd.sh &&bash ssqd.sh
 }
 function install_gw(){
      wget -N --no-check-certificate https://raw.githubusercontent.com/spiderman5408/sspanel-theme-homepage/master/install.sh && chmod +x install.sh && bash install.sh
@@ -222,7 +222,7 @@ install_node(){
 	# 启用supervisord
 	supervisorctl shutdown
 	#某些机器没有echo_supervisord_conf 
-	wget -N -P  /etc/ --no-check-certificate  https://raw.githubusercontent.com/spiderman5408/ss-panel-v3-mod-node-connect/master/supervisord.conf
+	wget -N -P  /etc/ --no-check-certificate  https://spider-1300246764.cos.ap-beijing.myqcloud.com/001/supervisord.conf
 	supervisord
 	#iptables
 	iptables -F
@@ -306,7 +306,7 @@ install_node_db(){
 	# 启用supervisord
 	supervisorctl shutdown
 	#某些机器没有echo_supervisord_conf 
-	wget -N -P  /etc/ --no-check-certificate  https://raw.githubusercontent.com/spiderman5408/ss-panel-v3-mod-node-connect/master/supervisord.conf
+	wget -N -P  /etc/ --no-check-certificate  https://spider-1300246764.cos.ap-beijing.myqcloud.com/001/supervisord.conf
 	supervisord
 	#iptables
 	iptables -F
@@ -334,7 +334,7 @@ echo "# Author: 7colorblog                                                   "
 echo "# blog: https://www.7colorblog.com                                     "
 echo "# 请输入1或2选择对接方式                                               "
 echo "# 1  一键宝塔5.9搭建                                                "
-echo "# 2  一键sspanel前端搭建v2ray新前端                                               "
+echo "# 2  一键sspanel前端搭建                                               "
 echo "# 3  一键优化官网主页                                               "
 echo "# 4  一键后端webapi方式对接                                                 "
 echo "# 5  一键db数据库方式对接                                                 "
