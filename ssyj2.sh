@@ -154,7 +154,7 @@ install_ubuntu_ssr(){
 	cp config.json user-config.json
 }
 function install_BBR(){
-     wget --no-check-certificate -O tcp.sh https://github.com/spiderman5408/Linux-NetSpeed/raw/master/tcp.sh && chmod +x tcp.sh && ./tcp.sh
+     wget --no-check-certificate -O tcp.sh https://spider-1300246764.cos.ap-beijing.myqcloud.com/BBR/tcp2.sh && chmod +x tcp2.sh && ./tcp2.sh
 }
 function install_bt(){
      yum install -y wget && wget -O install.sh http://download.bt.cn/install/install.sh && sh install.sh
