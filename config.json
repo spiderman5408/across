@@ -1,0 +1,13 @@
+{
+  "poseidon": {
+    "nodeId": NODE_ID, // 节点 ID
+    "nodeKey": "NODE_KEY", // VNetPanel 节点授权所生成的通信密钥
+    "webapi": "WEB_API",
+
+    // 下面的不懂就不要动了
+    "useLocalConfig": false,
+    "panel": "vnetpanel"
+  }
+
+  // 如果是使用本地配置的话，在下面填上 v2ray 的配置即可
+}
