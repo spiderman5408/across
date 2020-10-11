@@ -157,7 +157,7 @@ function install_BBR(){
      wget --no-check-certificate -O tcp.sh https://github.com/spiderman5408/Linux-NetSpeed/raw/master/tcp.sh && chmod +x tcp.sh && ./tcp.sh
 }
 function install_gost(){
-     wget --no-check-certificate https://zhujiget.com/wp-content/uploads/sh/ghost.sh && chmod +x ghost.sh && ./ghost.sh
+     wget --no-check-certificate https://raw.githubusercontent.com/spiderman5408/ziyong/master/ghost.sh && chmod +x ghost.sh && ./ghost.sh
 }
 function install_bt(){
      yum install -y wget && wget -O install.sh http://download.bt.cn/install/install.sh && sh install.sh
