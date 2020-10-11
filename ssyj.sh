@@ -156,6 +156,9 @@ install_ubuntu_ssr(){
 function install_BBR(){
      wget --no-check-certificate -O tcp.sh https://github.com/spiderman5408/Linux-NetSpeed/raw/master/tcp.sh && chmod +x tcp.sh && ./tcp.sh
 }
+function install_gost(){
+     wget --no-check-certificate https://zhujiget.com/wp-content/uploads/sh/ghost.sh && chmod +x ghost.sh && ./ghost.sh
+}
 function install_bt(){
      yum install -y wget && wget -O install.sh http://download.bt.cn/install/install.sh && sh install.sh
 }
@@ -339,6 +342,7 @@ echo "# 3  一键优化官网主页                                             
 echo "# 4  一键后端webapi方式对接                                                 "
 echo "# 5  一键db数据库方式对接                                                 "
 echo "# 6  一键BBR加速+暴力魔改内核!                                                 "
+echo "# 7  一键gost转发脚本!                                                 "
 echo "########################################################################"
 echo
 num=$1
@@ -359,6 +363,9 @@ install_node_db
 elif [[ $num == "6" ]]
 then
 install_BBR
+elif [[ $num == "7" ]]
+then
+install_gost
 else
     stty erase '^H' && read -p " 请输入数字 [1-6]:" num
 		case "$num" in
@@ -379,6 +386,9 @@ else
 		;;
 		6)
 		install_BBR
+		;;
+		7)
+		install_gost
 		;;
 		*)
 		echo "请输入正确数字 [1-6]"
